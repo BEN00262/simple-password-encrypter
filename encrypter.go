@@ -13,7 +13,6 @@ import (
 	"os"
 )
 
-// create member functions of the File stuff
 func readFile(filename string) []byte {
 	fileRead, error := ioutil.ReadFile(filename)
 
@@ -52,7 +51,6 @@ func encryptFile(filename string, key string) {
 		panic(error.Error())
 	}
 
-	//Create a nonce. Nonce should be from GCM
 	nonce := make([]byte, aesGCM.NonceSize())
 	if _, error = io.ReadFull(rand.Reader, nonce); error != nil {
 		panic(error.Error())
