@@ -14,7 +14,7 @@ make
 ```bash:
 go build encrypter.go
 ```
-### running the binary
+### Running the binary
 #### encryption
 ```bash:
 encrypter.exe -filename < your file here > -mode e -key < Your sample key >
