@@ -104,7 +104,13 @@ func decryptFile(filename string, key string) string {
 		panic(err.Error())
 	}
 
-	return fmt.Sprintf("%s", plaintext)
+	err = writeAll(string(plaintext))
+
+	if err != nil {
+		return fmt.Sprintf("copying to clipboard failed. Manually copy and use the text: %s", plaintext)
+	}
+
+	return fmt.Sprintf("%s has been copied to the clipboard", plaintext)
 }
 
 var (
