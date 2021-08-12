@@ -50,7 +50,7 @@ func waitOpenClipboard() error {
 	return err
 }
 
-func writeAll(text string) error {
+func CopyToClipboard(text string) error {
 	// LockOSThread ensure that the whole method will keep executing on the same thread from begin to end (it actually locks the goroutine thread attribution).
 	// Otherwise if the goroutine switch thread during execution (which is a common practice), the OpenClipboard and CloseClipboard will happen on two different threads, and it will result in a clipboard deadlock.
 	runtime.LockOSThread()

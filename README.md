@@ -15,13 +15,27 @@ make
 go build encrypter.go
 ```
 ### Running the binary
-#### encryption
+#### saving a credential
 ```bash:
-encrypter.exe -filename < your file here > -mode e -key < Your sample key >
+encrypter.exe -filename < your file here > -mode s -key < Your sample key > -target < the site/anything u will use as a unique identifier > -password < the actual password >
 ```
-#### decryption
->the program prints the details of the file on the cmdline
+#### showing all the saved targets
+>the program prints all the saved targets
+
 ```bash:
-encrypter.exe -filename < your file here > -mode d -key < Your sample key >
+encrypter.exe -filename < your file here > -mode r -key < Your sample key >
 ```
 
+#### reading a password
+>the program copies the password to the clipboard if it is found otherwise it informs u
+
+```bash:
+encrypter.exe -filename < your file here > -mode r -key < Your sample key > -target < the unique id for the saved password > 
+```
+
+#### deleting a credential
+>the program deletes the saved credential from its store
+
+```bash:
+encrypter.exe -filename < your file here > -mode d -key < Your sample key > -target < the unique id for the saved password > 
+```
