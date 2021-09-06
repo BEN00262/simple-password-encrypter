@@ -1,4 +1,4 @@
-// Copyright 2013 @atotto. All rights reserved.
+
 // +build windows
 
 package main
